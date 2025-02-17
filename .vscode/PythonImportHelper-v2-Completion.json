@@ -1,0 +1,375 @@
+[
+    {
+        "label": "runpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "runpy",
+        "description": "runpy",
+        "detail": "runpy",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "site",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "site",
+        "description": "site",
+        "detail": "site",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "mmap",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "mmap",
+        "description": "mmap",
+        "detail": "mmap",
+        "documentation": {}
+    },
+    {
+        "label": "struct",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "struct",
+        "description": "struct",
+        "detail": "struct",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "pyarrow",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pyarrow",
+        "description": "pyarrow",
+        "detail": "pyarrow",
+        "documentation": {}
+    },
+    {
+        "label": "pyarrow.parquet",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pyarrow.parquet",
+        "description": "pyarrow.parquet",
+        "detail": "pyarrow.parquet",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "concurrent.futures",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "concurrent.futures",
+        "description": "concurrent.futures",
+        "detail": "concurrent.futures",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "setup",
+        "importPath": "setuptools",
+        "description": "setuptools",
+        "isExtraImport": true,
+        "detail": "setuptools",
+        "documentation": {}
+    },
+    {
+        "label": "bin_dir",
+        "kind": 5,
+        "importPath": ".venv.Scripts.activate_this",
+        "description": ".venv.Scripts.activate_this",
+        "peekOfCode": "bin_dir = os.path.dirname(abs_file)\nbase = bin_dir[: -len(\"Scripts\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"yabm25\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))",
+        "detail": ".venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "base",
+        "kind": 5,
+        "importPath": ".venv.Scripts.activate_this",
+        "description": ".venv.Scripts.activate_this",
+        "peekOfCode": "base = bin_dir[: -len(\"Scripts\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"yabm25\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)",
+        "detail": ".venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"PATH\"]",
+        "kind": 5,
+        "importPath": ".venv.Scripts.activate_this",
+        "description": ".venv.Scripts.activate_this",
+        "peekOfCode": "os.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"yabm25\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix",
+        "detail": ".venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"VIRTUAL_ENV\"]",
+        "kind": 5,
+        "importPath": ".venv.Scripts.activate_this",
+        "description": ".venv.Scripts.activate_this",
+        "peekOfCode": "os.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"yabm25\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": ".venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"VIRTUAL_ENV_PROMPT\"]",
+        "kind": 5,
+        "importPath": ".venv.Scripts.activate_this",
+        "description": ".venv.Scripts.activate_this",
+        "peekOfCode": "os.environ[\"VIRTUAL_ENV_PROMPT\"] = \"yabm25\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": ".venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "prev_length",
+        "kind": 5,
+        "importPath": ".venv.Scripts.activate_this",
+        "description": ".venv.Scripts.activate_this",
+        "peekOfCode": "prev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": ".venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.path[:]",
+        "kind": 5,
+        "importPath": ".venv.Scripts.activate_this",
+        "description": ".venv.Scripts.activate_this",
+        "peekOfCode": "sys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": ".venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.real_prefix",
+        "kind": 5,
+        "importPath": ".venv.Scripts.activate_this",
+        "description": ".venv.Scripts.activate_this",
+        "peekOfCode": "sys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": ".venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.prefix",
+        "kind": 5,
+        "importPath": ".venv.Scripts.activate_this",
+        "description": ".venv.Scripts.activate_this",
+        "peekOfCode": "sys.prefix = base",
+        "detail": ".venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "BM25Config",
+        "kind": 6,
+        "importPath": "yabm25.core",
+        "description": "yabm25.core",
+        "peekOfCode": "class BM25Config:\n    index_dir: str = \"index\"\n    doc_chunk_size: int = 100_000\n    postings_chunk_size: int = 1_000_000\n    compression: str = \"ZSTD\"\n    k1: float = 1.2\n    b: float = 0.75\n    memory_map: bool = True\nclass BM25Indexer:\n    def __init__(",
+        "detail": "yabm25.core",
+        "documentation": {}
+    },
+    {
+        "label": "BM25Indexer",
+        "kind": 6,
+        "importPath": "yabm25.core",
+        "description": "yabm25.core",
+        "peekOfCode": "class BM25Indexer:\n    def __init__(\n        self,\n        corpus_or_config: Union[List[List[str]], BM25Config] = None,\n        k1: float = 1.2,\n        b: float = 0.75,\n    ):\n        \"\"\"Initialize with either corpus or config\"\"\"\n        # Initialize common attributes\n        self.lexicon: Dict[str, Tuple[int, int]] = {}",
+        "detail": "yabm25.core",
+        "documentation": {}
+    },
+    {
+        "label": "BM25Searcher",
+        "kind": 6,
+        "importPath": "yabm25.core",
+        "description": "yabm25.core",
+        "peekOfCode": "class BM25Searcher:\n    def __init__(self, index_dir: str = \"index\"):\n        self.config, self.metadata = self._load_index(index_dir)\n        self.lexicon = self._load_lexicon()\n    def _load_index(self, index_dir: str):\n        \"\"\"Load index metadata and configuration\"\"\"\n        metadata_path = Path(index_dir) / \"metadata.npz\"\n        with np.load(metadata_path, allow_pickle=True) as data:\n            config_dict = data[\"config\"].item()\n            metadata = {",
+        "detail": "yabm25.core",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "yabm25.core",
+        "description": "yabm25.core",
+        "peekOfCode": "logger = logging.getLogger(__name__)\n@dataclass\nclass BM25Config:\n    index_dir: str = \"index\"\n    doc_chunk_size: int = 100_000\n    postings_chunk_size: int = 1_000_000\n    compression: str = \"ZSTD\"\n    k1: float = 1.2\n    b: float = 0.75\n    memory_map: bool = True",
+        "detail": "yabm25.core",
+        "documentation": {}
+    },
+    {
+        "label": "IndexManager",
+        "kind": 6,
+        "importPath": "yabm25.index",
+        "description": "yabm25.index",
+        "peekOfCode": "class IndexManager:\n    def __init__(self, config: BM25Config = BM25Config()):\n        self.config = config\n        self.indexer = BM25Indexer(config)\n    def create_index(self, corpus: List[List[str]]):\n        \"\"\"Create new search index\"\"\"\n        self.indexer.build_index(corpus)\n        self.indexer.close()\n    def optimize_index(self):\n        \"\"\"Optimize index for query performance\"\"\"",
+        "detail": "yabm25.index",
+        "documentation": {}
+    },
+    {
+        "label": "batch_generator",
+        "kind": 2,
+        "importPath": "yabm25.utils",
+        "description": "yabm25.utils",
+        "peekOfCode": "def batch_generator(data: List, batch_size: int):\n    \"\"\"Generate data in fixed-size chunks\"\"\"\n    for i in range(0, len(data), batch_size):\n        yield data[i : i + batch_size]\ndef safe_divide(numerator: np.ndarray, denominator: np.ndarray) -> np.ndarray:\n    \"\"\"Perform division with zero handling\"\"\"\n    with np.errstate(divide=\"ignore\", invalid=\"ignore\"):\n        result = np.true_divide(numerator, denominator)\n        result[~np.isfinite(result)] = 0.0\n    return result",
+        "detail": "yabm25.utils",
+        "documentation": {}
+    },
+    {
+        "label": "safe_divide",
+        "kind": 2,
+        "importPath": "yabm25.utils",
+        "description": "yabm25.utils",
+        "peekOfCode": "def safe_divide(numerator: np.ndarray, denominator: np.ndarray) -> np.ndarray:\n    \"\"\"Perform division with zero handling\"\"\"\n    with np.errstate(divide=\"ignore\", invalid=\"ignore\"):\n        result = np.true_divide(numerator, denominator)\n        result[~np.isfinite(result)] = 0.0\n    return result",
+        "detail": "yabm25.utils",
+        "documentation": {}
+    },
+    {
+        "label": "BM25L",
+        "kind": 6,
+        "importPath": "yabm25.variants",
+        "description": "yabm25.variants",
+        "peekOfCode": "class BM25L(BM25Indexer):\n    def __init__(self, delta: float = 0.5, **kwargs):\n        super().__init__(**kwargs)\n        self.delta = delta\n    def _process_term(self, term: str, idf: float):\n        doc_ids, tfs = super()._process_term(term, idf)\n        adjusted_tfs = tfs + self.delta\n        # BM25L specific scoring\n        return doc_ids, adjusted_tfs * idf\nclass BM25Adpt(BM25Indexer):",
+        "detail": "yabm25.variants",
+        "documentation": {}
+    },
+    {
+        "label": "BM25Adpt",
+        "kind": 6,
+        "importPath": "yabm25.variants",
+        "description": "yabm25.variants",
+        "peekOfCode": "class BM25Adpt(BM25Indexer):\n    def __init__(self, **kwargs):\n        super().__init__(**kwargs)\n        self._adapt_parameters()\n    def _adapt_parameters(self):\n        \"\"\"Automatically adjust k1 and b based on corpus stats\"\"\"\n        doc_length_std = np.std(self.doc_lengths)\n        self.config.k1 = 1.2 + (0.3 * (self.avgdl - 100) / 100)\n        self.config.b = 0.75 + (0.15 * (doc_length_std / self.avgdl))",
+        "detail": "yabm25.variants",
+        "documentation": {}
+    }
+]
