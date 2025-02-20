@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "yabm25"
-version = "0.1.0"
+dynamic = ["version"]
 authors = [
   { name="Ali Muhammad", email="ali@quantlix.com" }
 ]
@@ -15,6 +15,9 @@ dependencies = [
     "numpy>=2.2.3",
     "pyarrow>=19.0.0",
 ]
+
+[tool.setuptools.dynamic]
+version = {attr = "yabm25.version.__version__"}
 
 [tool.setuptools.packages.find]
 where = ["."]

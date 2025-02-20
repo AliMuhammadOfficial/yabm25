@@ -607,5 +607,23 @@
         "peekOfCode": "class BM25Adpt(BM25Indexer):\n    def __init__(self, **kwargs):\n        super().__init__(**kwargs)\n        self._adapt_parameters()\n    def _adapt_parameters(self):\n        \"\"\"Automatically adjust k1 and b based on corpus stats\"\"\"\n        doc_length_std = np.std(self.doc_lengths)\n        self.config.k1 = 1.2 + (0.3 * (self.avgdl - 100) / 100)\n        self.config.b = 0.75 + (0.15 * (doc_length_std / self.avgdl))",
         "detail": "yabm25.variants",
         "documentation": {}
+    },
+    {
+        "label": "__version__",
+        "kind": 5,
+        "importPath": "yabm25.version",
+        "description": "yabm25.version",
+        "peekOfCode": "__version__ = \"0.1.1\"",
+        "detail": "yabm25.version",
+        "documentation": {}
+    },
+    {
+        "label": "get_version",
+        "kind": 2,
+        "importPath": "setup",
+        "description": "setup",
+        "peekOfCode": "def get_version():\n    init_path = os.path.join(\"yabm25\", \"version.py\")\n    with open(init_path, \"r\", encoding=\"utf-8\") as f:\n        version_match = re.search(r\"^__version__ = ['\\\"]([^'\\\"]*)['\\\"]\", f.read(), re.M)\n        if version_match:\n            return version_match.group(1)\n    raise RuntimeError(\"Unable to find version string.\")\nif __name__ == \"__main__\":\n    setup(\n        name=\"yabm25\",",
+        "detail": "setup",
+        "documentation": {}
     }
 ]
