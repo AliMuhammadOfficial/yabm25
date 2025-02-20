@@ -60,11 +60,43 @@
         "documentation": {}
     },
     {
+        "label": "BM25Config",
+        "importPath": "yabm25",
+        "description": "yabm25",
+        "isExtraImport": true,
+        "detail": "yabm25",
+        "documentation": {}
+    },
+    {
         "label": "BM25Indexer",
         "importPath": "yabm25",
         "description": "yabm25",
         "isExtraImport": true,
         "detail": "yabm25",
+        "documentation": {}
+    },
+    {
+        "label": "BM25Indexer",
+        "importPath": "yabm25",
+        "description": "yabm25",
+        "isExtraImport": true,
+        "detail": "yabm25",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
         "documentation": {}
     },
     {
@@ -194,14 +226,6 @@
         "documentation": {}
     },
     {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
         "label": "dataclass",
         "importPath": "dataclasses",
         "description": "dataclasses",
@@ -322,6 +346,24 @@
         "description": ".venv.Scripts.activate_this",
         "peekOfCode": "sys.prefix = base",
         "detail": ".venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "config",
+        "kind": 5,
+        "importPath": "examples.persistent_index",
+        "description": "examples.persistent_index",
+        "peekOfCode": "config = BM25Config(\n    index_dir=str(Path.home() / \"bm25_index\"),\n    doc_chunk_size=500_000,\n    compression=\"ZSTD\",\n    memory_map=True\n)\n# Sample large corpus\nlarge_corpus = [\n    [\"document\", \"one\", \"content\"],\n    [\"document\", \"two\", \"content\"],",
+        "detail": "examples.persistent_index",
+        "documentation": {}
+    },
+    {
+        "label": "large_corpus",
+        "kind": 5,
+        "importPath": "examples.persistent_index",
+        "description": "examples.persistent_index",
+        "peekOfCode": "large_corpus = [\n    [\"document\", \"one\", \"content\"],\n    [\"document\", \"two\", \"content\"],\n    # ... millions of documents ...\n]\ntry:\n    # Build index\n    indexer = BM25Indexer(config)\n    indexer.build_index(large_corpus)\n    # Search",
+        "detail": "examples.persistent_index",
         "documentation": {}
     },
     {
