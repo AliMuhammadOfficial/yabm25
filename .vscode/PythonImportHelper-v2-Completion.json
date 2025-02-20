@@ -268,14 +268,6 @@
         "documentation": {}
     },
     {
-        "label": "find_packages",
-        "importPath": "setuptools",
-        "description": "setuptools",
-        "isExtraImport": true,
-        "detail": "setuptools",
-        "documentation": {}
-    },
-    {
         "label": "bin_dir",
         "kind": 5,
         "importPath": ".venv.Scripts.activate_this",
@@ -615,15 +607,6 @@
         "description": "yabm25.version",
         "peekOfCode": "__version__ = \"0.1.1\"",
         "detail": "yabm25.version",
-        "documentation": {}
-    },
-    {
-        "label": "get_version",
-        "kind": 2,
-        "importPath": "setup",
-        "description": "setup",
-        "peekOfCode": "def get_version():\n    init_path = os.path.join(\"yabm25\", \"version.py\")\n    with open(init_path, \"r\", encoding=\"utf-8\") as f:\n        version_match = re.search(r\"^__version__ = ['\\\"]([^'\\\"]*)['\\\"]\", f.read(), re.M)\n        if version_match:\n            return version_match.group(1)\n    raise RuntimeError(\"Unable to find version string.\")\nif __name__ == \"__main__\":\n    setup(\n        name=\"yabm25\",",
-        "detail": "setup",
         "documentation": {}
     }
 ]
