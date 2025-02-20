@@ -2,6 +2,7 @@ from setuptools import setup, find_packages
 import os
 import re
 
+
 def get_version():
     init_path = os.path.join("yabm25", "version.py")
     with open(init_path, "r", encoding="utf-8") as f:
@@ -9,6 +10,7 @@ def get_version():
         if version_match:
             return version_match.group(1)
     raise RuntimeError("Unable to find version string.")
+
 
 if __name__ == "__main__":
     setup(
