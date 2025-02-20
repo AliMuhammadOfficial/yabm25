@@ -52,64 +52,36 @@
         "documentation": {}
     },
     {
-        "label": "mmap",
+        "label": "BM25Indexer",
+        "importPath": "yabm25",
+        "description": "yabm25",
+        "isExtraImport": true,
+        "detail": "yabm25",
+        "documentation": {}
+    },
+    {
+        "label": "BM25Indexer",
+        "importPath": "yabm25",
+        "description": "yabm25",
+        "isExtraImport": true,
+        "detail": "yabm25",
+        "documentation": {}
+    },
+    {
+        "label": "re",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "mmap",
-        "description": "mmap",
-        "detail": "mmap",
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
         "documentation": {}
     },
     {
-        "label": "struct",
-        "kind": 6,
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
         "isExtraImport": true,
-        "importPath": "struct",
-        "description": "struct",
-        "detail": "struct",
-        "documentation": {}
-    },
-    {
-        "label": "numpy",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "numpy",
-        "description": "numpy",
-        "detail": "numpy",
-        "documentation": {}
-    },
-    {
-        "label": "pyarrow",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "pyarrow",
-        "description": "pyarrow",
-        "detail": "pyarrow",
-        "documentation": {}
-    },
-    {
-        "label": "pyarrow.parquet",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "pyarrow.parquet",
-        "description": "pyarrow.parquet",
-        "detail": "pyarrow.parquet",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "dataclass",
-        "importPath": "dataclasses",
-        "description": "dataclasses",
-        "isExtraImport": true,
-        "detail": "dataclasses",
+        "detail": "typing",
         "documentation": {}
     },
     {
@@ -174,6 +146,67 @@
         "description": "typing",
         "isExtraImport": true,
         "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "mmap",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "mmap",
+        "description": "mmap",
+        "detail": "mmap",
+        "documentation": {}
+    },
+    {
+        "label": "struct",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "struct",
+        "description": "struct",
+        "detail": "struct",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "pyarrow",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pyarrow",
+        "description": "pyarrow",
+        "detail": "pyarrow",
+        "documentation": {}
+    },
+    {
+        "label": "pyarrow.parquet",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pyarrow.parquet",
+        "description": "pyarrow.parquet",
+        "detail": "pyarrow.parquet",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
         "documentation": {}
     },
     {
@@ -289,6 +322,159 @@
         "description": ".venv.Scripts.activate_this",
         "peekOfCode": "sys.prefix = base",
         "detail": ".venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "Preprocessor",
+        "kind": 6,
+        "importPath": "examples.preprocessing",
+        "description": "examples.preprocessing",
+        "peekOfCode": "class Preprocessor:\n    def __init__(self):\n        self.stemmer = PorterStemmer()\n        self.stop_words = set(stopwords.words('english'))\n    def preprocess(self, text: str) -> List[str]:\n        \"\"\"Convert text to normalized tokens\"\"\"\n        # Lowercase and basic cleaning\n        text = text.lower()\n        text = re.sub(r'[^\\w\\s]', '', text)\n        # Tokenize",
+        "detail": "examples.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "ensure_nltk_data",
+        "kind": 2,
+        "importPath": "examples.preprocessing",
+        "description": "examples.preprocessing",
+        "peekOfCode": "def ensure_nltk_data():\n    try:\n        nltk.data.find('corpora/stopwords')\n    except LookupError:\n        print(\"Downloading required NLTK data...\")\n        nltk.download('stopwords', quiet=True)\n    try:\n        nltk.data.find('tokenizers/punkt')\n    except LookupError:\n        print(\"Downloading NLTK punkt tokenizer...\")",
+        "detail": "examples.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "preprocessor",
+        "kind": 5,
+        "importPath": "examples.preprocessing",
+        "description": "examples.preprocessing",
+        "peekOfCode": "preprocessor = Preprocessor()\ncorpus = [\n    \"The quick brown fox jumps over the lazy dog!\",\n    \"A quick brown dog jumps under the happy fox.\",\n    \"The lazy fox sleeps.\"\n]\n# Preprocess corpus\nprocessed_corpus = [preprocessor.preprocess(doc) for doc in corpus]\nprint(\"\\nProcessed corpus:\")\nfor doc in processed_corpus:",
+        "detail": "examples.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "corpus",
+        "kind": 5,
+        "importPath": "examples.preprocessing",
+        "description": "examples.preprocessing",
+        "peekOfCode": "corpus = [\n    \"The quick brown fox jumps over the lazy dog!\",\n    \"A quick brown dog jumps under the happy fox.\",\n    \"The lazy fox sleeps.\"\n]\n# Preprocess corpus\nprocessed_corpus = [preprocessor.preprocess(doc) for doc in corpus]\nprint(\"\\nProcessed corpus:\")\nfor doc in processed_corpus:\n    print(doc)",
+        "detail": "examples.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "processed_corpus",
+        "kind": 5,
+        "importPath": "examples.preprocessing",
+        "description": "examples.preprocessing",
+        "peekOfCode": "processed_corpus = [preprocessor.preprocess(doc) for doc in corpus]\nprint(\"\\nProcessed corpus:\")\nfor doc in processed_corpus:\n    print(doc)\n# Create index with processed documents\nbm25 = BM25Indexer(processed_corpus)\n# Preprocess query the same way\nquery = \"lazy fox sleeping\"\nprocessed_query = preprocessor.preprocess(query)\nprint(f\"\\nProcessed query: {processed_query}\")",
+        "detail": "examples.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "bm25",
+        "kind": 5,
+        "importPath": "examples.preprocessing",
+        "description": "examples.preprocessing",
+        "peekOfCode": "bm25 = BM25Indexer(processed_corpus)\n# Preprocess query the same way\nquery = \"lazy fox sleeping\"\nprocessed_query = preprocessor.preprocess(query)\nprint(f\"\\nProcessed query: {processed_query}\")\n# Search\nscores = bm25.get_scores(processed_query)\nprint(f\"\\nDocument scores: {scores}\")\ntop_docs = bm25.get_top_n(processed_query, corpus, n=1)\nprint(f\"\\nTop document: {top_docs}\")",
+        "detail": "examples.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "query",
+        "kind": 5,
+        "importPath": "examples.preprocessing",
+        "description": "examples.preprocessing",
+        "peekOfCode": "query = \"lazy fox sleeping\"\nprocessed_query = preprocessor.preprocess(query)\nprint(f\"\\nProcessed query: {processed_query}\")\n# Search\nscores = bm25.get_scores(processed_query)\nprint(f\"\\nDocument scores: {scores}\")\ntop_docs = bm25.get_top_n(processed_query, corpus, n=1)\nprint(f\"\\nTop document: {top_docs}\")",
+        "detail": "examples.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "processed_query",
+        "kind": 5,
+        "importPath": "examples.preprocessing",
+        "description": "examples.preprocessing",
+        "peekOfCode": "processed_query = preprocessor.preprocess(query)\nprint(f\"\\nProcessed query: {processed_query}\")\n# Search\nscores = bm25.get_scores(processed_query)\nprint(f\"\\nDocument scores: {scores}\")\ntop_docs = bm25.get_top_n(processed_query, corpus, n=1)\nprint(f\"\\nTop document: {top_docs}\")",
+        "detail": "examples.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "scores",
+        "kind": 5,
+        "importPath": "examples.preprocessing",
+        "description": "examples.preprocessing",
+        "peekOfCode": "scores = bm25.get_scores(processed_query)\nprint(f\"\\nDocument scores: {scores}\")\ntop_docs = bm25.get_top_n(processed_query, corpus, n=1)\nprint(f\"\\nTop document: {top_docs}\")",
+        "detail": "examples.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "top_docs",
+        "kind": 5,
+        "importPath": "examples.preprocessing",
+        "description": "examples.preprocessing",
+        "peekOfCode": "top_docs = bm25.get_top_n(processed_query, corpus, n=1)\nprint(f\"\\nTop document: {top_docs}\")",
+        "detail": "examples.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "corpus",
+        "kind": 5,
+        "importPath": "examples.quickstart",
+        "description": "examples.quickstart",
+        "peekOfCode": "corpus = [\n    \"Hello there good man!\",\n    \"It is quite windy in London\",\n    \"How is the weather today?\"\n]\ntokenized_corpus = [doc.split(\" \") for doc in corpus]\n# Create BM25 instance\nbm25 = BM25Indexer(tokenized_corpus)\n# Test document scoring\nquery = \"windy London\"",
+        "detail": "examples.quickstart",
+        "documentation": {}
+    },
+    {
+        "label": "tokenized_corpus",
+        "kind": 5,
+        "importPath": "examples.quickstart",
+        "description": "examples.quickstart",
+        "peekOfCode": "tokenized_corpus = [doc.split(\" \") for doc in corpus]\n# Create BM25 instance\nbm25 = BM25Indexer(tokenized_corpus)\n# Test document scoring\nquery = \"windy London\"\ntokenized_query = query.split(\" \")\n# Get scores for all documents\ndoc_scores = bm25.get_scores(tokenized_query)\nprint(\"Document scores:\", doc_scores)\n# Should output: array([0., 0.93729472, 0.])",
+        "detail": "examples.quickstart",
+        "documentation": {}
+    },
+    {
+        "label": "bm25",
+        "kind": 5,
+        "importPath": "examples.quickstart",
+        "description": "examples.quickstart",
+        "peekOfCode": "bm25 = BM25Indexer(tokenized_corpus)\n# Test document scoring\nquery = \"windy London\"\ntokenized_query = query.split(\" \")\n# Get scores for all documents\ndoc_scores = bm25.get_scores(tokenized_query)\nprint(\"Document scores:\", doc_scores)\n# Should output: array([0., 0.93729472, 0.])\n# Get top documents\ntop_docs = bm25.get_top_n(tokenized_query, corpus, n=1)",
+        "detail": "examples.quickstart",
+        "documentation": {}
+    },
+    {
+        "label": "query",
+        "kind": 5,
+        "importPath": "examples.quickstart",
+        "description": "examples.quickstart",
+        "peekOfCode": "query = \"windy London\"\ntokenized_query = query.split(\" \")\n# Get scores for all documents\ndoc_scores = bm25.get_scores(tokenized_query)\nprint(\"Document scores:\", doc_scores)\n# Should output: array([0., 0.93729472, 0.])\n# Get top documents\ntop_docs = bm25.get_top_n(tokenized_query, corpus, n=1)\nprint(\"\\nTop document:\", top_docs)\n# Should output: ['It is quite windy in London']",
+        "detail": "examples.quickstart",
+        "documentation": {}
+    },
+    {
+        "label": "tokenized_query",
+        "kind": 5,
+        "importPath": "examples.quickstart",
+        "description": "examples.quickstart",
+        "peekOfCode": "tokenized_query = query.split(\" \")\n# Get scores for all documents\ndoc_scores = bm25.get_scores(tokenized_query)\nprint(\"Document scores:\", doc_scores)\n# Should output: array([0., 0.93729472, 0.])\n# Get top documents\ntop_docs = bm25.get_top_n(tokenized_query, corpus, n=1)\nprint(\"\\nTop document:\", top_docs)\n# Should output: ['It is quite windy in London']",
+        "detail": "examples.quickstart",
+        "documentation": {}
+    },
+    {
+        "label": "doc_scores",
+        "kind": 5,
+        "importPath": "examples.quickstart",
+        "description": "examples.quickstart",
+        "peekOfCode": "doc_scores = bm25.get_scores(tokenized_query)\nprint(\"Document scores:\", doc_scores)\n# Should output: array([0., 0.93729472, 0.])\n# Get top documents\ntop_docs = bm25.get_top_n(tokenized_query, corpus, n=1)\nprint(\"\\nTop document:\", top_docs)\n# Should output: ['It is quite windy in London']",
+        "detail": "examples.quickstart",
+        "documentation": {}
+    },
+    {
+        "label": "top_docs",
+        "kind": 5,
+        "importPath": "examples.quickstart",
+        "description": "examples.quickstart",
+        "peekOfCode": "top_docs = bm25.get_top_n(tokenized_query, corpus, n=1)\nprint(\"\\nTop document:\", top_docs)\n# Should output: ['It is quite windy in London']",
+        "detail": "examples.quickstart",
         "documentation": {}
     },
     {
