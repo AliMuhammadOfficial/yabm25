@@ -84,6 +84,30 @@
         "documentation": {}
     },
     {
+        "label": "BM25Indexer",
+        "importPath": "yabm25",
+        "description": "yabm25",
+        "isExtraImport": true,
+        "detail": "yabm25",
+        "documentation": {}
+    },
+    {
+        "label": "BM25L",
+        "importPath": "yabm25",
+        "description": "yabm25",
+        "isExtraImport": true,
+        "detail": "yabm25",
+        "documentation": {}
+    },
+    {
+        "label": "BM25Adpt",
+        "importPath": "yabm25",
+        "description": "yabm25",
+        "isExtraImport": true,
+        "detail": "yabm25",
+        "documentation": {}
+    },
+    {
         "label": "Path",
         "importPath": "pathlib",
         "description": "pathlib",
@@ -181,6 +205,49 @@
         "documentation": {}
     },
     {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "pytest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pytest",
+        "description": "pytest",
+        "detail": "pytest",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
         "label": "mmap",
         "kind": 6,
         "isExtraImport": true,
@@ -196,15 +263,6 @@
         "importPath": "struct",
         "description": "struct",
         "detail": "struct",
-        "documentation": {}
-    },
-    {
-        "label": "numpy",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "numpy",
-        "description": "numpy",
-        "detail": "numpy",
         "documentation": {}
     },
     {
@@ -231,15 +289,6 @@
         "description": "dataclasses",
         "isExtraImport": true,
         "detail": "dataclasses",
-        "documentation": {}
-    },
-    {
-        "label": "logging",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "logging",
-        "description": "logging",
-        "detail": "logging",
         "documentation": {}
     },
     {
@@ -520,6 +569,96 @@
         "documentation": {}
     },
     {
+        "label": "sample_corpus",
+        "kind": 2,
+        "importPath": "tests.test_core",
+        "description": "tests.test_core",
+        "peekOfCode": "def sample_corpus():\n    return [\n        [\"hello\", \"there\", \"good\", \"man\"],\n        [\"it\", \"is\", \"quite\", \"windy\", \"in\", \"london\"],\n        [\"how\", \"is\", \"the\", \"weather\", \"today\"],\n    ]\n@pytest.fixture\ndef bm25(sample_corpus):\n    return BM25Indexer(sample_corpus)\ndef test_initialization(bm25):",
+        "detail": "tests.test_core",
+        "documentation": {}
+    },
+    {
+        "label": "bm25",
+        "kind": 2,
+        "importPath": "tests.test_core",
+        "description": "tests.test_core",
+        "peekOfCode": "def bm25(sample_corpus):\n    return BM25Indexer(sample_corpus)\ndef test_initialization(bm25):\n    assert bm25.doc_count == 3\n    assert bm25.avgdl > 0\n    assert len(bm25.lexicon) > 0\ndef test_get_scores(bm25):\n    query = [\"windy\", \"london\"]\n    scores = bm25.get_scores(query)\n    assert len(scores) == 3",
+        "detail": "tests.test_core",
+        "documentation": {}
+    },
+    {
+        "label": "test_initialization",
+        "kind": 2,
+        "importPath": "tests.test_core",
+        "description": "tests.test_core",
+        "peekOfCode": "def test_initialization(bm25):\n    assert bm25.doc_count == 3\n    assert bm25.avgdl > 0\n    assert len(bm25.lexicon) > 0\ndef test_get_scores(bm25):\n    query = [\"windy\", \"london\"]\n    scores = bm25.get_scores(query)\n    assert len(scores) == 3\n    assert scores[1] > scores[0]  # Second document should be most relevant\n    assert scores[1] > scores[2]",
+        "detail": "tests.test_core",
+        "documentation": {}
+    },
+    {
+        "label": "test_get_scores",
+        "kind": 2,
+        "importPath": "tests.test_core",
+        "description": "tests.test_core",
+        "peekOfCode": "def test_get_scores(bm25):\n    query = [\"windy\", \"london\"]\n    scores = bm25.get_scores(query)\n    assert len(scores) == 3\n    assert scores[1] > scores[0]  # Second document should be most relevant\n    assert scores[1] > scores[2]\ndef test_get_top_n(bm25, sample_corpus):\n    query = [\"windy\", \"london\"]\n    results = bm25.get_top_n(query, sample_corpus, n=1)\n    assert len(results) == 1",
+        "detail": "tests.test_core",
+        "documentation": {}
+    },
+    {
+        "label": "test_get_top_n",
+        "kind": 2,
+        "importPath": "tests.test_core",
+        "description": "tests.test_core",
+        "peekOfCode": "def test_get_top_n(bm25, sample_corpus):\n    query = [\"windy\", \"london\"]\n    results = bm25.get_top_n(query, sample_corpus, n=1)\n    assert len(results) == 1\n    assert \"windy\" in results[0]\n    assert \"london\" in results[0]",
+        "detail": "tests.test_core",
+        "documentation": {}
+    },
+    {
+        "label": "test_corpus",
+        "kind": 2,
+        "importPath": "tests.test_variants",
+        "description": "tests.test_variants",
+        "peekOfCode": "def test_corpus():\n    return [\n        [\"this\", \"is\", \"a\", \"long\", \"document\"],\n        [\"short\", \"doc\"],\n        [\"another\", \"document\", \"with\", \"more\", \"terms\"],\n    ]\ndef test_bm25l():\n    \"\"\"Test BM25L variant with simple case\"\"\"\n    corpus = [\n        [\"long\", \"long\", \"document\", \"test\"],  # Two occurrences of 'long'",
+        "detail": "tests.test_variants",
+        "documentation": {}
+    },
+    {
+        "label": "test_bm25l",
+        "kind": 2,
+        "importPath": "tests.test_variants",
+        "description": "tests.test_variants",
+        "peekOfCode": "def test_bm25l():\n    \"\"\"Test BM25L variant with simple case\"\"\"\n    corpus = [\n        [\"long\", \"long\", \"document\", \"test\"],  # Two occurrences of 'long'\n        [\"short\", \"document\"],  # No occurrence of 'long'\n    ]\n    bm25l = BM25L(corpus, delta=0.5, k1=1.2, b=0.75)\n    query = [\"long\"]\n    scores = bm25l.get_scores(query)\n    # Debug information",
+        "detail": "tests.test_variants",
+        "documentation": {}
+    },
+    {
+        "label": "test_bm25adpt",
+        "kind": 2,
+        "importPath": "tests.test_variants",
+        "description": "tests.test_variants",
+        "peekOfCode": "def test_bm25adpt():\n    corpus = [[\"doc1\", \"is\", \"long\"], [\"doc2\", \"is\", \"short\"]]\n    bm25adpt = BM25Adpt(corpus)\n    scores = bm25adpt.get_scores([\"short\"])\n    assert scores[1] > scores[0]  # Second document should be more relevant for \"short\"\ndef test_bm25l_long_documents():\n    \"\"\"Test BM25L behavior with documents of varying lengths\"\"\"\n    corpus = [\n        [\n            \"document\",",
+        "detail": "tests.test_variants",
+        "documentation": {}
+    },
+    {
+        "label": "test_bm25l_long_documents",
+        "kind": 2,
+        "importPath": "tests.test_variants",
+        "description": "tests.test_variants",
+        "peekOfCode": "def test_bm25l_long_documents():\n    \"\"\"Test BM25L behavior with documents of varying lengths\"\"\"\n    corpus = [\n        [\n            \"document\",\n            \"test\",\n            \"document\",\n            \"test\",\n            \"long\",\n            \"content\",",
+        "detail": "tests.test_variants",
+        "documentation": {}
+    },
+    {
+        "label": "test_bm25adpt_parameter_adjustment",
+        "kind": 2,
+        "importPath": "tests.test_variants",
+        "description": "tests.test_variants",
+        "peekOfCode": "def test_bm25adpt_parameter_adjustment():\n    corpus = [\n        [\"short\", \"text\"],\n        [\"very\", \"very\", \"very\", \"long\", \"text\", \"with\", \"repeated\", \"terms\"],\n        [\"medium\", \"sized\", \"text\"],\n    ]\n    bm25adpt = BM25Adpt(corpus)\n    assert hasattr(bm25adpt, \"config\")\n    assert hasattr(bm25adpt.config, \"k1\")\n    assert hasattr(bm25adpt.config, \"b\")",
+        "detail": "tests.test_variants",
+        "documentation": {}
+    },
+    {
         "label": "BM25Config",
         "kind": 6,
         "importPath": "yabm25.core",
@@ -587,7 +726,7 @@
         "kind": 6,
         "importPath": "yabm25.variants",
         "description": "yabm25.variants",
-        "peekOfCode": "class BM25L(BM25Indexer):\n    def __init__(self, delta: float = 0.5, **kwargs):\n        super().__init__(**kwargs)\n        self.delta = delta\n    def _process_term(self, term: str, idf: float):\n        doc_ids, tfs = super()._process_term(term, idf)\n        adjusted_tfs = tfs + self.delta\n        # BM25L specific scoring\n        return doc_ids, adjusted_tfs * idf\nclass BM25Adpt(BM25Indexer):",
+        "peekOfCode": "class BM25L(BM25Indexer):\n    \"\"\"BM25L: A Better Variant of BM25 for Long Documents\n    Reference:\n        Yuanhua Lv and ChengXiang Zhai. 2011. Lower-bounding term frequency\n        normalization. In Proceedings of CIKM '11. ACM, 7-16.\n    The key improvements over standard BM25:\n    1. Lower-bounded term frequency normalization\n    2. Modified document length normalization\n    3. Improved IDF calculation\n    \"\"\"",
         "detail": "yabm25.variants",
         "documentation": {}
     },
@@ -596,7 +735,16 @@
         "kind": 6,
         "importPath": "yabm25.variants",
         "description": "yabm25.variants",
-        "peekOfCode": "class BM25Adpt(BM25Indexer):\n    def __init__(self, **kwargs):\n        super().__init__(**kwargs)\n        self._adapt_parameters()\n    def _adapt_parameters(self):\n        \"\"\"Automatically adjust k1 and b based on corpus stats\"\"\"\n        doc_length_std = np.std(self.doc_lengths)\n        self.config.k1 = 1.2 + (0.3 * (self.avgdl - 100) / 100)\n        self.config.b = 0.75 + (0.15 * (doc_length_std / self.avgdl))",
+        "peekOfCode": "class BM25Adpt(BM25Indexer):\n    \"\"\"Adaptive BM25 variant that automatically adjusts parameters\"\"\"\n    def __init__(\n        self,\n        corpus_or_config: Union[List[List[str]], BM25Config] = None,\n        k1: float = 1.2,\n        b: float = 0.75,\n    ):\n        super().__init__(corpus_or_config, k1=k1, b=b)\n        self._adapt_parameters()",
+        "detail": "yabm25.variants",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "yabm25.variants",
+        "description": "yabm25.variants",
+        "peekOfCode": "logger = logging.getLogger(__name__)\nclass BM25L(BM25Indexer):\n    \"\"\"BM25L: A Better Variant of BM25 for Long Documents\n    Reference:\n        Yuanhua Lv and ChengXiang Zhai. 2011. Lower-bounding term frequency\n        normalization. In Proceedings of CIKM '11. ACM, 7-16.\n    The key improvements over standard BM25:\n    1. Lower-bounded term frequency normalization\n    2. Modified document length normalization\n    3. Improved IDF calculation",
         "detail": "yabm25.variants",
         "documentation": {}
     },

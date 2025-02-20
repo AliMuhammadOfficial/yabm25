@@ -47,7 +47,7 @@ classifiers = [
 dependencies = ["numpy>=1.20.0", "pyarrow>=7.0.0"]
 
 [project.optional-dependencies]
-dev = ["pytest>=7.0", "black>=22.0", "build", "twine"]
+dev = ["pytest>=7.0", "black>=22.0", "build", "twine", "pytest-cov>=4.1.0"]
 
 [project.urls]
 Documentation = "https://yabm25.quantlix.com/"
@@ -59,3 +59,8 @@ version = { attr = "yabm25.version.__version__" }
 
 [tool.setuptools.packages.find]
 where = ["."]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --tb=short"
